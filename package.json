@@ -5,15 +5,21 @@
   "main": "index.js",
   "engines": {
     "node": "14.15.0",
-    "npm": "7.20.2"
+    "yarn": "1.22.10"
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "server": "nodemon --delay 1500ms index.js",
+    "client": "yarn --cwd client start",
+    "dev": "yarn server & yarn client",
+    "client-install": "(cd ./client && yarn install)",
+    "client-build": "(cd ./client && yarn run build)",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn run client-install && yarn run client-build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.2.1",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.7",
