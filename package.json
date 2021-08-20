@@ -14,7 +14,7 @@
     "dev": "concurrently \"yarn run server\" \"yarn run client\" ",
     "client-install": "yarn --cwd client install",
     "client-build": "yarn --cwd client build",
-    "heroku-postbuild": "YARN_PRODUCTION=false pkill -f nodemon && yarn client-install && yarn client-build"
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn client-install && yarn client-build"
   },
   "author": "",
   "license": "ISC",
