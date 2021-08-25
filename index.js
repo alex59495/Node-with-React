@@ -5,7 +5,10 @@ const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 
-require('./models/user');
+// models
+require('./models/User');
+require('./models/Survey');
+
 require('./services/passport');
 require('./routes/authRoutes');
 
@@ -32,6 +35,8 @@ mongoose.connect(keys.mongoURI,  {
 // Require export une fonction qu'on appelle directement avec l'argument app
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
+
 
 if(process.env.NODE_ENV === 'production') {
   // Express will serve up production assets like main.css or main.js

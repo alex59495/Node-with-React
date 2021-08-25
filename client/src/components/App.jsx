@@ -4,18 +4,12 @@ import { connect } from 'react-redux';
 
 import Header from './Header';
 import Landing from './Landing';
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 
 // Redux functions
 // import * as actions from '../actions'
 import {fetchUser} from '../actions'
-
-
-const Dashboard = () => {
-  return <h2>Dashboard</h2>
-}
-const SurveyNew = () => {
-  return <h2>SurveyNew</h2>
-}
 
 const App = (props) => {
 
